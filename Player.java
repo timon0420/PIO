@@ -2,13 +2,21 @@ import java.util.Random;
 
 public class Player {
     private Random rand = new Random(); 
-    private String name;
+    private String name = "Anonim";
+
+    public Player(){
+        
+    }
+
+    public Player (String name) {
+        setName(name);
+    }
 
     public void setName(String name) {
-        if (name != null && name.length() > 0) {
+        if (name != null && !name.isEmpty()){
             this.name = name;
         } else {
-            this.name = "Brak";
+            System.err.println("Brak imienia");
         }
     }
 
@@ -20,3 +28,4 @@ public class Player {
         return rand.nextInt(6) + 1;
     }
 }
+//Zasada DRY
