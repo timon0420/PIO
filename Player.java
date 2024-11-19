@@ -1,31 +1,26 @@
-import java.util.Random;
-
-public class Player {
-    private Random rand = new Random(); 
+// import java.util.regex.Pattern;
+abstract public class Player {
+    // private Pattern pattern = Pattern.compile("^[\\w.\\-]{3,}$"); 
     private String name = "Anonim";
 
-    public Player(){
-        
-    }
+    public Player(){}
 
     public Player (String name) {
         setName(name);
     }
 
-    public void setName(String name) {
-        if (name != null && !name.isEmpty()){
+    public final void setName(String name) {
+        // if (pattern.matcher(name).matches()) 
+        if (name != null && name.matches("^[\\w.\\-]{3,}$")){
             this.name = name;
         } else {
-            System.err.println("Brak imienia");
+            throw new IllegalArgumentException();
         }
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public int guess() {
-        return rand.nextInt(6) + 1;
-    }
+    abstract public int guess();
 }
-//Zasada DRY
