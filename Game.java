@@ -6,10 +6,13 @@ public class Game {
     public void addPlayer(Player player) {
         this.player = player;
     }
-    
+
     public void play() {
+        if (player == null) {
+            return;
+        }
+        
         try {
-            player.setName("Szymon");
             System.out.println("Gracz: " + player.getName());
         } catch (Exception e) {
             System.out.println("Imie jest nieprawidłowe");
