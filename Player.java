@@ -23,4 +23,8 @@ abstract public class Player {
     }
 
     abstract public int guess();
+
+    public String toString() {
+        return "(" + getClass().getSimpleName() + ") " + name;
+    }
 }

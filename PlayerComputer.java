@@ -11,4 +11,5 @@ public class PlayerComputer extends Player {
     public int guess() {
         return rand.nextInt(6) + 1;
     }
+
 }
