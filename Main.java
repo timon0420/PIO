@@ -8,16 +8,18 @@ public class Main {
 
         try {            
             game.addPlayer(player1);
-            game.addPlayer(player1);
             game.addPlayer(player2);
             game.addPlayer(player3);
         } catch (Exception e) {
             System.out.println(e);
         }
         
-        game.play();
-        game.removePlayer("Szymon1");
-        game.removePlayer("Szymon15");
-        game.printPlayers();
+        for (int i = 0; i < 10; i++) {
+            game.play();
+        }
+        //game.printPlayers();
+
+        game.printStats();
+        
     }
 }
